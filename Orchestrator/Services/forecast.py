@@ -72,11 +72,13 @@ def req_forecast_data():
         res = requests.get(request_url)
         res_json = json.loads(res.text)
 
+
         # Validate and prepare the data
         if "cod" not in res_json:  # Good response
 
             # Store the forecast of the 7 days for each station
             for forecast in res_json["daily"]:
+                print(forecast)
 
                 values = ( 
                         datetime.utcfromtimestamp(res_json["current"]["dt"]), 
@@ -97,6 +99,7 @@ def req_forecast_data():
 
                 # append all 
                 station_values.append(values)
+                print(values)
         time.sleep(20)
 
     # Insert values

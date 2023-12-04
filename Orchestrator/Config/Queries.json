@@ -1,0 +1,78 @@
+{
+    "Dimensions2": { 
+        "files": [
+            "weather_class_dim.sql",
+            "alerts_dim.sql",
+            "stations_dim.sql",
+            "sensors_dim.sql",
+            "delta_measurements_dim.sql"
+        ]
+    },
+
+    "Dimensions": { 
+        "files": [
+            "delta_measurements_dim.sql"
+        ]
+    },
+
+    "Transform": { 
+        "files": [
+            "daily_measurements_dim.sql",
+            "hourly_measurements_dim.sql",
+            "date_daily_measurements_dim.sql",
+            "date_hourly_measurements_dim.sql"
+        ]
+    },
+
+    "Load": { 
+        "files": [
+            "load_daily_measurements_dim.sql",
+            "load_hourly_measurements_dim.sql",
+            "update_control.sql"
+        ]
+    },
+
+    "Genesis": { 
+        "files": [
+            "Alerts.sql",
+            "Continent.sql",
+            "Countries.sql",
+            "Date_daily_dim.sql",
+            "Date_hourly_dim.sql",
+            "Sensors.sql",
+            "Stations.sql",
+            "Update_control.sql",
+            "Weather_conditions.sql",
+
+            "alerts_dim.sql",
+            "sensors_dim.sql",
+            "stations_dim.sql",
+            "weather_class_dim.sql",
+
+            "Forecast.sql",
+            "Measurements.sql",
+            "Measurements_hourly_dim.sql",
+            "Measurements_daily_dim.sql"
+        ]
+    },
+
+    "DropAll": {
+        "files": [
+            "Drop_source.sql",
+            "Drop_DW.sql"
+        ]
+    },
+
+    "Analysis": { 
+        "files": [
+            "Cube_uvi.sql",
+            "Dense_rank_vis.sql",
+            "Group_set_uvi.sql",
+            "Ntile_vis.sql",
+            "Period_month_temp.sql",
+            "Ranking_temp.sql",
+            "Rollup_uvi.sql",
+            "Window_temp.sql"
+        ]
+    }
+}
