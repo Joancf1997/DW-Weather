@@ -1,17 +1,8 @@
 {
-    "Dimensions2": { 
-        "files": [
-            "weather_class_dim.sql",
-            "alerts_dim.sql",
-            "stations_dim.sql",
-            "sensors_dim.sql",
-            "delta_measurements_dim.sql"
-        ]
-    },
-
     "Dimensions": { 
         "files": [
-            "delta_measurements_dim.sql"
+            "delta_measurements_dim.sql",
+            "delta_forecast_dim.sql"
         ]
     },
 
@@ -20,12 +11,15 @@
             "daily_measurements_dim.sql",
             "hourly_measurements_dim.sql",
             "date_daily_measurements_dim.sql",
-            "date_hourly_measurements_dim.sql"
+            "date_hourly_measurements_dim.sql",
+            "daily_forecast_dim.sql",
+            "date_daily_forecast_dim.sql"
         ]
     },
 
     "Load": { 
         "files": [
+            "load_daily_forecast_dim.sql",
             "load_daily_measurements_dim.sql",
             "load_hourly_measurements_dim.sql",
             "update_control.sql"
@@ -52,7 +46,8 @@
             "Forecast.sql",
             "Measurements.sql",
             "Measurements_hourly_dim.sql",
-            "Measurements_daily_dim.sql"
+            "Measurements_daily_dim.sql",
+            "Forecast_daily_dim.sql"
         ]
     },
 

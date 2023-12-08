@@ -86,11 +86,11 @@ class Steps():
         ax.set_xlabel('Station')
         ax.set_ylabel('Feels like')
         ax.set_title('Feels like evolution over time')
-        fig.savefig('IMG/feels_like_america.png')   
+        fig.savefig('IMG/Feels_like_america.png')   
         plt.close(fig) 
 
     def Rep_uvi_europe_overtime(self):
-        uvi_eu = self.helper.execute_sql_select("SQL/Reports/Uvi_europ_overtime copy.sql")
+        uvi_eu = self.helper.execute_sql_select("SQL/Reports/Uvi_europ_overtime.sql")
         uvi_eu = uvi_eu.pivot(index="date_day", columns="station", values="uvi")
         fig, ax = plt.subplots(figsize=(15, 13)) # Create a bar plot
         uvi_eu.plot(ax=ax)  # Plot bars for each station
@@ -101,6 +101,18 @@ class Steps():
         fig.savefig('IMG/Uvi_europe.png')   
         plt.close(fig) 
 
+    def Rep_current_vs_forecast_munich(self):
+        temp = self.helper.execute_sql_select("SQL/Reports/Forecast_vs_current.sql")
+        temp = temp.pivot(index="date", columns="station", values=["temp_max", "temp", "temp_min"])
+        fig, ax = plt.subplots(figsize=(15, 13)) # Create a bar plot
+        temp.plot(ax=ax)  # Plot bars for each station
+        # Set labels and title
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Temperature')
+        ax.set_title('Forecasted Min and Max vs actual temperature in Munich')
+        fig.savefig('IMG/Forecast_vs_current.png')   
+        plt.close(fig) 
+        
 
     def Drop(self): 
         pass

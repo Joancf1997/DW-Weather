@@ -23,9 +23,8 @@ class DB():
     # Connecto to the DB 
     def connect(self): 
         try:
-            self.conn = psycopg2.connect(database='DMT', host='localhost',user='joseandres', password='', port='5432')
+            self.conn = psycopg2.connect(database='DMT2', host='localhost',user='joseandres', password='', port='5432')
             self.cursor = self.conn.cursor()
-
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
 
@@ -78,8 +77,6 @@ def req_forecast_data():
 
             # Store the forecast of the 7 days for each station
             for forecast in res_json["daily"]:
-                print(forecast)
-
                 values = ( 
                         datetime.utcfromtimestamp(res_json["current"]["dt"]), 
                         datetime.utcfromtimestamp(forecast["dt"]), 
@@ -99,7 +96,6 @@ def req_forecast_data():
 
                 # append all 
                 station_values.append(values)
-                print(values)
         time.sleep(20)
 
     # Insert values

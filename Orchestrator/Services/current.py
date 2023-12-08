@@ -24,7 +24,7 @@ class DB():
     # Connecto to the DB 
     def connect(self): 
         try:
-            self.conn = psycopg2.connect(database='DMT', host='localhost',user='joseandres', password='', port='5432')
+            self.conn = psycopg2.connect(database='DMT2', host='localhost',user='joseandres', password='', port='5432')
             self.cursor = self.conn.cursor()
 
         except (Exception, psycopg2.DatabaseError) as error:
@@ -47,7 +47,7 @@ class DB():
     # Insert current values requested
     def insert_current_measurements(self, values):
         sql_vals = ",".join(self.cursor.mogrify("(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", x).decode('utf-8') for x in values)
-        self.cursor.execute("INSERT INTO Measurements (times, time_zone_offset, sunrise, sunset, temp, feels_like, pressure, humidity, dew_point, uvi, clouds, visibility , wind_speed, wind_deg, id_weather_class, id_alert, id_sensor, id_station) VALUES " + sql_vals + ";")
+        self.cursor.execute("INSERT INTO measurements (times, time_zone_offset, sunrise, sunset, temp, feels_like, pressure, humidity, dew_point, uvi, clouds, visibility , wind_speed, wind_deg, id_weather_class, id_alert, id_sensor, id_station) VALUES " + sql_vals + ";")
         self.conn.commit()
         print("Values inserted...")
     

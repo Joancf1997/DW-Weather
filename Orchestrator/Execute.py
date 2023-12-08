@@ -22,9 +22,8 @@ orchestator = Orchestrator(
         steps.Rep_temp_diff,
         steps.Rep_visibility_rank,
         steps.Rep_feels_like_america_overtime,
-        steps.Rep_uvi_europe_overtime
-
-
+        steps.Rep_uvi_europe_overtime,
+        steps.Rep_current_vs_forecast_munich
     ]
 )
 # Only needed when working with datasets from DB in python
