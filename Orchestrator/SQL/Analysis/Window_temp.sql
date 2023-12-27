@@ -30,7 +30,7 @@ FROM
 		id_station,
 		avg(temp) AS temp,
 		avg(avg(temp)) OVER() avg_temp
-	FROM measurements_daily_dim
+	FROM measurements_daily_fact
 	GROUP BY id_station
 ) t
 INNER JOIN stations_dim s

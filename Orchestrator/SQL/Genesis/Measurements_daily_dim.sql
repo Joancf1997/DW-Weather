@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS measurements_daily_dim;
+DROP TABLE IF EXISTS measurements_daily_fact;
 
 
-CREATE TABLE measurements_daily_dim
+CREATE TABLE measurements_daily_fact
 (
 	-- Keys
 	id_station smallint,
@@ -25,5 +25,5 @@ CREATE TABLE measurements_daily_dim
 );
 
 
-COMMENT ON TABLE measurements_daily_dim
+COMMENT ON TABLE measurements_daily_fact
     IS 'Weather measurements daily dimensions table to compare with forecast measurements table';

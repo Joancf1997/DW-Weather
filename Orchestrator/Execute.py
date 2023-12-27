@@ -10,9 +10,9 @@ orchestator = Orchestrator(
         #steps.Genesis,
 
         # Run to update DW
-        steps.Dimensions,
-        steps.Transform,
-        steps.Load,
+        #steps.Dimensions,
+        #steps.Transform,
+        #steps.Load,
 
         # Run to generate analysis tables
         steps.Analysis,

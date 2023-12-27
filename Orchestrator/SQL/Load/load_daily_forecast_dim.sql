@@ -1,4 +1,4 @@
-INSERT INTO forecast_daily_dim 
+INSERT INTO forecast_daily_fact 
 SELECT 
 	-- KEY Dimensions
     id_station,

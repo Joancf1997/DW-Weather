@@ -33,7 +33,7 @@ from
 		avg(temp) as avg_temp,
 		RANK() OVER (ORDER BY max(temp)) Coldest,
 		RANK () OVER (ORDER BY max(temp) DESC) Hottet
-	from measurements_daily_dim
+	from measurements_daily_fact
 	group by id_station
 ) m
 inner join stations_dim s

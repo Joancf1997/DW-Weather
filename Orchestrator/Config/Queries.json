@@ -46,8 +46,8 @@
             "Forecast.sql",
             "Measurements.sql",
             "Measurements_hourly_dim.sql",
-            "Measurements_daily_dim.sql",
-            "Forecast_daily_dim.sql"
+            "measurements_daily_fact.sql",
+            "forecast_daily_fact.sql"
         ]
     },
 

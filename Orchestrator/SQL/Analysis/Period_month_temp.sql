@@ -34,7 +34,7 @@ FROM
 		max(year) as year, 
 		max(monthnum) as month,
 		avg(temp) as avg_temp
-	FROM measurements_daily_dim m 
+	FROM measurements_daily_fact m 
 	INNER JOIN date_daily_dim d
 	ON m.id_date = d.datekey
 	GROUP BY id_station, month

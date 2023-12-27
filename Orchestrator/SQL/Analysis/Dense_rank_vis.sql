@@ -33,7 +33,7 @@ from
 		ROUND(avg(visibility), -3) as round_vis,
 		RANK() OVER (ORDER BY ROUND(avg(visibility), -3)) rank_visib,
 		DENSE_RANK() OVER (ORDER BY ROUND(avg(visibility), -3)) dense_rank_visib
-	from measurements_daily_dim
+	from measurements_daily_fact
 	group by id_station
 ) m
 inner join stations_dim s

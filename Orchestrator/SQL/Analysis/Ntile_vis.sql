@@ -31,7 +31,7 @@ FROM
 		id_station,
 		ROUND(avg(visibility), -3) AS avg_vis,
 		NTILE(5) OVER(ORDER BY ROUND(avg(visibility), -3)) AS gruop_vis
-	FROM measurements_daily_dim m
+	FROM measurements_daily_fact m
 	GROUP BY id_station
 ) m
 INNER JOIN stations_dim s
