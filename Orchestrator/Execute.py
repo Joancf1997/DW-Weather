@@ -15,15 +15,15 @@ orchestator = Orchestrator(
         #steps.Load,
 
         # Run to generate analysis tables
-        steps.Analysis,
+        #steps.Analysis,
 
         # Run to generate the graphs
         steps.Rep_temp_evol,
-        steps.Rep_temp_diff,
-        steps.Rep_visibility_rank,
-        steps.Rep_feels_like_america_overtime,
-        steps.Rep_uvi_europe_overtime,
-        steps.Rep_current_vs_forecast_munich
+        #steps.Rep_temp_diff,
+        #steps.Rep_visibility_rank,
+        #steps.Rep_feels_like_america_overtime,
+        #steps.Rep_uvi_europe_overtime,
+        #steps.Rep_current_vs_forecast_munich
     ]
 )
 # Only needed when working with datasets from DB in python
